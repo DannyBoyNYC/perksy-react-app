@@ -26,8 +26,8 @@ module.exports = {
       name: 'Documentation',
       sections: [
         {
-          name: 'Installation',
-          content: './README.md',
+          name: 'Style Conventions',
+          content: './docs/style-conventions.md',
           description: 'The description for the installation section'
         },
         {
