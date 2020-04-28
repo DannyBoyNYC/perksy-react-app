@@ -1,0 +1,22 @@
+{
+  plugins: [
+    'stylelint-scss',
+  ],
+  defaultSeverity: 'error',
+  rules: {
+    'max-nesting-depth': [4, { ignore: ['blockless-at-rules'] }],
+    'declaration-block-no-duplicate-properties': true,
+    'selector-max-id': 0,
+    'declaration-no-important': [true, { severity: 'error' }],
+    'property-no-vendor-prefix': true,
+    'selector-no-vendor-prefix': true,
+    'value-no-vendor-prefix': true,
+    'function-url-quotes': 'always',
+    'length-zero-no-unit': true,
+    'selector-pseudo-class-no-unknown': true,
+    'selector-pseudo-element-no-unknown': true,
+    'selector-pseudo-element-colon-notation': 'double',
+    'scss/at-rule-no-unknown': true,
+    'scss/selector-no-redundant-nesting-selector': true
+  }
+}

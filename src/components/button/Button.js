@@ -5,15 +5,18 @@ import classnames from 'classnames';
 import './styles.scss';
 
 /**
- * A basic button with an on click event.
+ * Renders a basic button with an on click event.
  */
-const Button = ({ children, isDisabled, onClick, variation }) => (
+const Button = ({
+  children, isDisabled, onClick, variation,
+}) => (
   <button
     className={classnames('button', `button--${variation}`, {
-      'button--disabled': isDisabled
+      'button--disabled': isDisabled,
     })}
     onClick={onClick}
     disabled={isDisabled}
+    type="button"
   >
     {children}
   </button>
@@ -32,8 +35,8 @@ Button.propTypes = {
     'info',
     'success',
     'warning',
-    'danger'
-  ]).isRequired
+    'danger',
+  ]).isRequired,
 };
 
 export default Button;

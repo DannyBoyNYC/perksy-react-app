@@ -1,4 +1,3 @@
-const { expect } = require('chai');
 const React = require('react');
 const { shallow } = require('enzyme');
 
@@ -20,7 +19,7 @@ describe('<Button.* />', function() {
     it('forwards props, and passes additional props, to child', function() {
       const props = {
         children,
-        type: 'primary'
+        variation: 'primary'
       };
       expect(component.props()).to.deep.equal(props);
     });

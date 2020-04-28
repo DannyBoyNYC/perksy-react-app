@@ -1,64 +1,60 @@
 .button {
-	border: 1px solid lightgrey;
-	cursor: pointer;
+  border: 0;
+  cursor: pointer;
   appearance: none;
   transition-property: color, background, border;
   transition-duration: 200ms;
   transition-timing-function: ease-in;
   padding: 1em 1.2em;
+  margin: 0 0.5em;
 
-	&.button--primary {
-		background-color: lightblue;
+  &.button--primary:not(.button--disabled) {
+    background-color: lightblue;
 
-		&:active,
-	  &:hover {
-	    background-color: steelblue;
-	  }
-	}
+    &:active,
+    &:hover {
+      background-color: steelblue;
+    }
+  }
 
-	&.button--info {
-		background-color: lightgrey;
+  &.button--info:not(.button--disabled) {
+    background-color: lightgrey;
 
-		&:active,
-	  &:hover {
-	    background-color: grey;
-	  }
-	}
+    &:active,
+    &:hover {
+      background-color: grey;
+    }
+  }
 
-	&.button--success {
-		background-color: lightgreen;
+  &.button--success:not(.button--disabled) {
+    background-color: lightgreen;
 
-		&:active,
-	  &:hover {
-	    background-color: mediumseagreen;
-	  }
-	}
+    &:active,
+    &:hover {
+      background-color: mediumseagreen;
+    }
+  }
 
-	&.button--warning {
-		background-color: gold;
+  &.button--warning:not(.button--disabled) {
+    background-color: gold;
 
-		&:active,
-	  &:hover {
-	    background-color: darkorange;
-	  }
-	}
+    &:active,
+    &:hover {
+      background-color: darkorange;
+    }
+  }
 
-	&.button--danger {
-		background-color: indianred;
+  &.button--danger:not(.button--disabled) {
+    background-color: indianred;
 
-		&:active,
-	  &:hover {
-	    background-color: firebrick;
-	  }
-	}
+    &:active,
+    &:hover {
+      background-color: firebrick;
+    }
+  }
 
-	&.button--disabled {
-		cursor: none;
-		background-color: red;
-
-		&:active,
-	  &:hover {
-	    background-color: red;
-	  }
-	}
+  &.button--disabled {
+    border: 1px solid lightgrey;
+    cursor: auto;
+  }
 }

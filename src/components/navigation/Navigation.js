@@ -2,30 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import List from '../list';
 import './styles.scss';
 
 /**
- * Renders an list item with a link.
+ * Renders a list item with an optional icon and link.
  */
-const ListItem = ({ iconClass, text, url }) => (
-  <li className="navigation__list-item list-item">
-    {iconClass && <i className={classnames('list-item__icon', iconClass)} />}
-    <a className="list-item__link" href={url}>
-      {text}
-    </a>
-  </li>
-);
+function onPrerender({ iconClass, text, url }){
+  return (
+    <span>
+      {iconClass && <i className={classnames('list-item__icon', iconClass)} />}
+      <a className="list-item__link" href={url}>
+        {text}
+      </a>
+    </span>
+  );
+}
 
 /**
  * Renders a list of links within a nav tag.
  */
 const Navigation = ({ links, variation }) => (
   <nav className={classnames('navigation', `navigation--${variation}`)}>
-    <ul className="navigation__list">
-      {links.map((link, index) => (
-        <ListItem {...link} key={index} />
-      ))}
-    </ul>
+    <List.Unordered
+      className="navigation__list"
+      items={links}
+      onPrerender={onPrerender}
+    />
   </nav>
 );
 

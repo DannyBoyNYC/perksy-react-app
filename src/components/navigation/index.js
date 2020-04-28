@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 /**
  * Navigation Variations.
  */
-const Horizontal = props => <Navigation variation="horizontal" {...props} />;
-const Vertical = props => <Navigation variation="vertical" {...props} />;
+const Horizontal = props => <Navigation {...props} variation="horizontal" />;
+const Vertical = props => <Navigation {...props} variation="vertical" />;
 
 export default { Horizontal, Vertical };

@@ -1,45 +1,74 @@
 # Perksy React Components
 
-Next Steps:
+### Next Steps:
 
-    1. Get README in a better place
-    2. Get Prettier working along with Eslint
-    3. Add Testing Framework
+1. Get README in a better place
+2. Get lint-staged hook working
+3. Get testing framework working
 
-    - Get perksy-web running
-    - Create perksy-components repo
+- Research forms in React
+- Look into graph libraries (D3, etc.)
+- Create perksy-components repo
+  - Get repo permissions and testing setup
+- Get perksy-web running
+- Nginx route roll-out plan
+- Test ADA at top-level for components
 
-Components:
+#### First Sections:
 
-    - Grid (Default)
-      - .Row
-    - Sidebar
-    - Title bar
-    - Navigation
-    	- .Vertical
-    	- .Horizontal
-    - User
-    	- .Avatar
-    	- .Profile
-    - Pages?
-    - Forms
-    - List
-    	- .Ordered
-    	- .Unordered
-    - Graphs
-    	- .PieChart
-    	- .BarChart (with bar charts, each column represents a group defined by a categorical variable)
-    	- .Histogram (with histograms, each column represents a group defined by a continuous, quantitative variable)
-    	- .Country
-    	- .Table
-    - Button (Default)
-    	- .Primary
-    	- .Info
-    	- .Success
-    	- .Warning
-    	- .Danger
+1. Dashboard
+2. Campaigns
+   - Create Campaign
+   - Add Questions
+   - Question Piping
+   - Select Targets
+   - Campaign Details
+   - Launch Campaign
+3. Analytics
 
-    CRUD
-     - Brand
-     - Campaign
-     - User (Manager?)
+- Overview
+  - Responses
+  - Respondents
+  - Segments
+  - Analysis
+
+#### Components:
+
+**Think on**
+
+- Statuses
+  - Links
+  - Buttons
+- Controls
+- Image
+	- Basic
+	- Placeholder
+	- Responsive
+	- ActionLink
+
+**Pipeline**
+
+- Sidebar
+- Title bar
+- Feed
+	- Collapsible w/ profile view
+- User
+	- .Avatar
+	- .Profile
+- Slider
+- Forms
+- TabView
+- Graphs
+  - .ProgressBar
+  - .PieChart
+  - .BarChart (with bar charts, each column represents a group defined by a categorical variable)
+  - .Histogram (with histograms, each column represents a group defined by a continuous, quantitative variable)
+  - .Country
+  - .Table
+- Grid?
+
+CRUD
+
+- Brand
+- Campaign
+- User (Manager?)

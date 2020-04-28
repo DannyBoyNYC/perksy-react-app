@@ -4,9 +4,11 @@
   "description": "React components for Perksy web app",
   "main": "index.js",
   "scripts": {
+    "precommit": "lint-staged",
     "build": "styleguidist build",
     "start": "styleguidist server",
-    "test": ""
+    "lint": "eslint src/ && stylelint src/",
+    "test": "jest"
   },
   "license": "ISC",
   "dependencies": {
@@ -17,8 +19,12 @@
   },
   "devDependencies": {
     "babel-core": "6.26.0",
+    "babel-eslint": "8.2.6",
+    "babel-jest": "23.6.0",
     "babel-loader": "7.1.4",
+    "babel-plugin-root-import": "6.1.0",
     "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-es2015-destructuring": "6.23.0",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
@@ -26,16 +32,33 @@
     "chai": "4.2.0",
     "css-loader": "1.0.0",
     "enzyme": "3.7.0",
-    "husky": "1.1.2",
+    "enzyme-adapter-react-16": "1.6.0",
+    "enzyme-to-json": "3.3.4",
+    "eslint": "5.7.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-prettier": "3.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-prettier": "3.0.0",
+    "eslint-plugin-react": "7.11.1",
+    "jest": "23.6.0",
     "lint-staged": "7.3.0",
     "mocha": "5.2.0",
     "node-sass": "4.9.4",
     "postcss-loader": "3.0.0",
     "prettier": "1.14.3",
     "react-styleguidist": "7.3.10",
+    "react-test-renderer": "^16.5.2",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
+    "stylelint": "9.6.0",
+    "stylelint-scss": "3.3.1",
     "webpack": "3.8.1"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "husky": {
     "hooks": {
@@ -43,8 +66,16 @@
     }
   },
   "lint-staged": {
-    "*.{js,md}": [
-      "prettier --write --no-editorconfig ./src/**/*",
+    "src/**/*.{js,jsx,json}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.md": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.scss": [
+      "stylelint --fix",
       "git add"
     ]
   }

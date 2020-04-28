@@ -1,6 +1,6 @@
 ### Variations
 
-#### Navigation.Horizontal
+#### Horizontal:
 
 ```jsx
 const Navigation = require('./index').default;
@@ -23,7 +23,7 @@ const Navigation = require('./index').default;
 />;
 ```
 
-#### Navigation.Vertical
+#### Vertical:
 
 ```jsx
 const Navigation = require('./index').default;
