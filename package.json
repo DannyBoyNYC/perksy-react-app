@@ -10,6 +10,7 @@
   },
   "license": "ISC",
   "dependencies": {
+    "classnames": "2.2.6",
     "prop-types": "15.6.2",
     "react": "16.5.2",
     "react-dom": "16.5.2"
@@ -23,12 +24,17 @@
     "babel-preset-react": "6.24.1",
     "buble": "0.19.3",
     "chai": "4.2.0",
+    "css-loader": "1.0.0",
     "enzyme": "3.7.0",
     "husky": "1.1.2",
     "lint-staged": "7.3.0",
     "mocha": "5.2.0",
+    "node-sass": "4.9.4",
+    "postcss-loader": "3.0.0",
     "prettier": "1.14.3",
     "react-styleguidist": "7.3.10",
+    "sass-loader": "7.1.0",
+    "style-loader": "0.23.1",
     "webpack": "3.8.1"
   },
   "husky": {

@@ -1,0 +1,24 @@
+.navigation {
+	.navigation__list {
+	  display: flex;
+	  padding-left: 0;
+	  list-style: none;
+	}
+
+	.navigation__list-item {
+	  display: inline-block;
+	  padding: 0.2em 0.4em;
+	}
+
+ 	&.navigation--horizontal {
+ 		.navigation__list {
+ 			flex-direction: row;
+ 		}
+ 	}
+
+ 	&.navigation--vertical {
+ 		.navigation__list {
+ 			flex-direction: column;
+ 		}
+ 	}
+}
