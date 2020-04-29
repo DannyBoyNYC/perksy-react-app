@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button.* /> <Button.Danger /> should render correctly with all required props 1`] = `
+<button
+  className="button button--danger"
+  type="button"
+>
+  Click me!
+</button>
+`;
+
+exports[`<Button.* /> <Button.Info /> should render correctly with all required props 1`] = `
+<button
+  className="button button--info"
+  type="button"
+>
+  Click me!
+</button>
+`;
+
+exports[`<Button.* /> <Button.Primary /> should render correctly with all required props 1`] = `
+<button
+  className="button button--primary"
+  type="button"
+>
+  Click me!
+</button>
+`;
+
+exports[`<Button.* /> <Button.Success /> should render correctly with all required props 1`] = `
+<button
+  className="button button--success"
+  type="button"
+>
+  Click me!
+</button>
+`;
+
+exports[`<Button.* /> <Button.Warning /> should render correctly with all required props 1`] = `
+<button
+  className="button button--warning"
+  type="button"
+>
+  Click me!
+</button>
+`;

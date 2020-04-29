@@ -1,6 +1,8 @@
 {
 	"plugins": [
-		"root-import",
+		["babel-plugin-root-import", {
+      "rootPathSuffix": "."
+    }],
 		"transform-class-properties",
 		"transform-es2015-destructuring",
 		"transform-object-rest-spread"

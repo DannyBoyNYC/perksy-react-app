@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dropdown.* /> <Dropdown.MultiSelect /> should render correctly with all required props 1`] = `
+<div
+  className="dropdown dropdown--multi-select"
+>
+  <StateManager
+    className="dropdown__select"
+    classNamePrefix="dropdown"
+    defaultInputValue=""
+    defaultMenuIsOpen={false}
+    defaultValue={Array []}
+    isMulti={true}
+    isSearchable={true}
+    options={
+      Array [
+        Object {
+          "label": "Foo",
+          "value": "foo",
+        },
+        Object {
+          "label": "Bar",
+          "value": "bar",
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`<Dropdown.* /> <Dropdown.SingleSelect /> should render correctly with all required props 1`] = `
+<div
+  className="dropdown dropdown--single-select"
+>
+  <StateManager
+    className="dropdown__select"
+    classNamePrefix="dropdown"
+    defaultInputValue=""
+    defaultMenuIsOpen={false}
+    defaultValue={Array []}
+    isSearchable={true}
+    options={
+      Array [
+        Object {
+          "label": "Foo",
+          "value": "foo",
+        },
+        Object {
+          "label": "Bar",
+          "value": "bar",
+        },
+      ]
+    }
+  />
+</div>
+`;

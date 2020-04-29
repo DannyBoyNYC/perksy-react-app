@@ -1,2 +1,15 @@
-node_modules
+# logs
+logs
+*.log
+npm-debug.log*
+
+# coverage directory used by tools like istanbul
+coverage/
+
+# npm directories and generated files
+.npm/
+node_modules/
+package-lock.json
+
+# OS generated files
 .DS_Store

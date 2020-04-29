@@ -1,12 +1,14 @@
 {
   "plugins": [
     "import",
+    "jest",
     "jsx-a11y",
     "react",
     "prettier"
   ],
   "extends": [
     "airbnb",
+    "plugin:jest/recommended",
   	"prettier",
   	"prettier/react"
   ],
@@ -23,5 +25,8 @@
     "prefer-const": "error",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/require-default-props": 0
+  },
+  "settings": {
+    "import/resolver": "babel-plugin-root-import"
   }
 }

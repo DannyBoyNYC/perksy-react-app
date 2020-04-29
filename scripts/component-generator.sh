@@ -6,7 +6,7 @@ COMPONENT_NAME=''
 DIRECTORY_PATH=''
 DIRECTORY_NAME=''
 
-# confirm the user's imputs are correct
+# confirm user imput is correct
 function confirm {
   case $confirmation in
     'y'|'Y'|'yes') addDirectory ;;
@@ -52,15 +52,12 @@ import './styles.scss';
 /**
  * Renders a $COMPONENT_NAME.
  */
-const $COMPONENT_NAME = ({
-  variation
-}) => {
-  return (
-    <div className={classnames('$DIRECTORY_NAME', \`button--\${variation}\`)} />
-  );
-};
+const $COMPONENT_NAME = ({ variation }) => (
+  <div className={classnames('$DIRECTORY_NAME', \`$DIRECTORY_NAME--\${variation}\`)} />
+);
 
 $COMPONENT_NAME.propTypes = {
+  /** Type of $DIRECTORY_NAME to render */
   variation: PropTypes.oneOf(['foo']).isRequired
 };
 
@@ -88,17 +85,25 @@ cat << EOF > "${COMPONENT_NAME}.spec.js"
 const React = require('react');
 const { shallow } = require('enzyme');
 
-const $COMPONENT_NAME = require('./$COMPONENT_NAME');
+const $COMPONENT_NAME = require('./index').default;
 
-describe('<$COMPONENT_NAME />', function () {
+describe('<$COMPONENT_NAME.* />', () => {
   let component;
+  const requiredProps = {};
 
-  beforeEach(function () {
-    component = shallow(<$COMPONENT_NAME {...fixture} />);
-  });
+  describe('<$COMPONENT_NAME.Foo />', () => {
+    beforeEach(() => {
+      // We must use .dive() since the component is wrapped in a variation HOC
+      component = shallow(<$COMPONENT_NAME.Foo {...requiredProps} />).dive();
+    });
 
-  it('renders a div tag', function () {
-    expect(component).to.have.tagName('div');
+    it('should render correctly with all required props', () => {
+      expect(component).toMatchSnapshot();
+    });
+
+    it('should have the correct BEM class names', () => {
+      expect(component).toHaveClassName('$DIRECTORY_NAME $DIRECTORY_NAME--foo');
+    });
   });
 });
 EOF
@@ -116,7 +121,7 @@ EOF
 cat << EOF > README.md
 ### Variations
 
-#### Horizontal:
+#### Foo:
 
 \`\`\`jsx
 const $COMPONENT_NAME = require('./index').default;

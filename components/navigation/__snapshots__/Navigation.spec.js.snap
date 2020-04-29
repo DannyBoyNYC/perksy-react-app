@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navigation.* /> <Navigation.Horizontal /> should render correctly with all required props 1`] = `
+<nav
+  className="navigation navigation--horizontal"
+>
+  <Unordered
+    className="navigation__list"
+    items={
+      Array [
+        Object {
+          "text": "Foo",
+          "url": "#",
+        },
+        Object {
+          "text": "Bar",
+          "url": "#",
+        },
+      ]
+    }
+    onPrerender={[Function]}
+  />
+</nav>
+`;
+
+exports[`<Navigation.* /> <Navigation.Vertical /> should render correctly with all required props 1`] = `
+<nav
+  className="navigation navigation--vertical"
+>
+  <Unordered
+    className="navigation__list"
+    items={
+      Array [
+        Object {
+          "text": "Foo",
+          "url": "#",
+        },
+        Object {
+          "text": "Bar",
+          "url": "#",
+        },
+      ]
+    }
+    onPrerender={[Function]}
+  />
+</nav>
+`;

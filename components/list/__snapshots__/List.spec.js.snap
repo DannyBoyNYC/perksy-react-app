@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<List.* /> <List.Ordered /> should render correctly with all required props 1`] = `
+<ol
+  className="list list--ordered"
+>
+  <li
+    className="list-item"
+    key="0"
+  >
+    foo
+  </li>
+  <li
+    className="list-item"
+    key="1"
+  >
+    bar
+  </li>
+</ol>
+`;
+
+exports[`<List.* /> <List.Unordered /> should render correctly with all required props 1`] = `
+<ul
+  className="list list--unordered"
+>
+  <li
+    className="list-item"
+    key="0"
+  >
+    foo
+  </li>
+  <li
+    className="list-item"
+    key="1"
+  >
+    bar
+  </li>
+</ul>
+`;

@@ -1,4 +1,8 @@
+const { styles, theme } = require('./styleguide.styles');
+
 module.exports = {
+  title: 'Perksy Components',
+  serverPort: 3000,
   template: {
     head: {
       links: [
@@ -9,18 +13,25 @@ module.exports = {
       ]
     }
   },
+  assetsDir: './styleguide/assets',
+  styles,
+  theme,
   sortProps: props => props,
   pagePerSection: true,
   sections: [
     {
-      name: 'UI Components',
-      components: './src/components/**/[A-Z]*.js',
+      name: '',
+      content: './components/README.md'
+    },
+    {
+      name: 'Components',
+      components: './components/**/[A-Z]*.js',
       exampleMode: 'collapse', // 'hide' | 'collapse' | 'expand'
       usageMode: 'expand' // 'hide' | 'collapse' | 'expand'
     },
     {
-      name: 'App Pages',
-      components: './src/pages/**/[A-Z]*.js'
+      name: 'Pages',
+      components: './styleguide/pages/**/[A-Z]*.js'
     },
     {
       name: 'Documentation',
@@ -29,11 +40,6 @@ module.exports = {
           name: 'Style Conventions',
           content: './docs/style-conventions.md',
           description: 'The description for the installation section'
-        },
-        {
-          name: 'Staging Site',
-          external: true,
-          href: 'https://staging.getperksy.com'
         }
       ]
     }

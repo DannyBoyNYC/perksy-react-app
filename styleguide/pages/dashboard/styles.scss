@@ -1,0 +1,90 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.page--dashboard {
+  display: flex;
+  flex-direction: row;
+
+  .side-bar {
+    background-color: #19222f;
+    text-align: center;
+    width: 233px;
+  }
+
+  .logo {
+    display: inline-block;
+    height: 33px;
+    margin-top: 20px;
+    width: 100px;
+  }
+
+  .navigation {
+    text-align: left;
+
+    &-item__link {
+      color: white;
+      display: block;
+      padding: 15px 64px;
+      text-decoration: none;
+    }
+
+    &-item {
+      position: relative;
+
+      .icon {
+        color: white;
+        left: 35px;
+        position: absolute;
+        top: 17px;
+      }
+    }
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .title-bar {
+    border-bottom: 1px solid lightgrey;
+    padding: 0 40px;
+
+    .title {
+      display: inline-block;
+    }
+  }
+
+  .body {
+    padding: 0 40px;
+  }
+
+  .campaign-graph {
+    background: lightgrey;
+    display: inline-block;
+    height: 300px;
+    margin-top: 17px;
+    vertical-align: top;
+    width: 60%;
+  }
+
+  .campaign-responses {
+    display: inline-block;
+    padding-left: 20px;
+    width: 40%;
+  }
+
+  .campaign-list {
+    background: white;
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+  }
+}

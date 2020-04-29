@@ -1,64 +1,73 @@
 {
   "name": "perksy-components",
-  "version": "1.0.0",
-  "description": "React components for Perksy web app",
+  "version": "0.1.0",
+  "description": "React components for the Perksy web app",
   "main": "index.js",
   "scripts": {
     "precommit": "lint-staged",
     "build": "styleguidist build",
-    "start": "styleguidist server",
-    "lint": "eslint src/ && stylelint src/",
-    "test": "jest"
+    "dev": "styleguidist server",
+    "gen": "./scripts/component-generator.sh",
+    "lint": "eslint ./components/ ./styleguide && stylelint ./components/ ./styleguide",
+    "test": "jest ./components -u",
+    "test:coverage": "jest ./components --coverage"
   },
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/perksy/perksy-components.git"
+  },
   "dependencies": {
     "classnames": "2.2.6",
     "prop-types": "15.6.2",
     "react": "16.5.2",
-    "react-dom": "16.5.2"
+    "react-dom": "16.5.2",
+    "react-select": "2.1.1"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
     "babel-eslint": "8.2.6",
     "babel-jest": "23.6.0",
     "babel-loader": "7.1.4",
-    "babel-plugin-root-import": "6.1.0",
+    "babel-plugin-root-import": "5.1.0",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-es2015-destructuring": "6.23.0",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
     "buble": "0.19.3",
-    "chai": "4.2.0",
-    "css-loader": "1.0.0",
+    "css-loader": "0.28.11",
     "enzyme": "3.7.0",
     "enzyme-adapter-react-16": "1.6.0",
     "enzyme-to-json": "3.3.4",
     "eslint": "5.7.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-prettier": "3.1.0",
+    "eslint-import-resolver-babel-plugin-root-import": "1.1.1",
     "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jest": "21.26.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-prettier": "3.0.0",
     "eslint-plugin-react": "7.11.1",
+    "husky": "1.1.2",
+    "identity-obj-proxy": "3.0.0",
     "jest": "23.6.0",
+    "jest-environment-enzyme": "7.0.0",
+    "jest-enzyme": "7.0.0",
     "lint-staged": "7.3.0",
     "mocha": "5.2.0",
     "node-sass": "4.9.4",
     "postcss-loader": "3.0.0",
     "prettier": "1.14.3",
     "react-styleguidist": "7.3.10",
-    "react-test-renderer": "^16.5.2",
+    "react-test-renderer": "16.5.2",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
     "stylelint": "9.6.0",
+    "stylelint-config-recommended": "2.1.0",
+    "stylelint-order": "1.0.0",
     "stylelint-scss": "3.3.1",
     "webpack": "3.8.1"
-  },
-  "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
   },
   "husky": {
     "hooks": {
@@ -66,16 +75,18 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json}": [
+    "*.{js,jsx}": [
       "eslint --fix",
+      "prettier --write",
       "git add"
     ],
     "*.md": [
       "prettier --write",
       "git add"
     ],
-    "**/*.scss": [
+    "*.scss": [
       "stylelint --fix",
+      "prettier --write",
       "git add"
     ]
   }
