@@ -33,7 +33,7 @@ function prompt {
   echo 'Please enter the component directory name below. It should be lowercase and hyphen-separated for new words.'
   read -p 'Component directory: ' directory
   DIRECTORY_NAME=$directory
-  DIRECTORY_PATH=src/components/$DIRECTORY_NAME
+  DIRECTORY_PATH=components/$DIRECTORY_NAME
   COMPONENT_NAME=$(echo "$DIRECTORY_NAME" | awk 'BEGIN { FS="-"; OFS="" }; {for(j=1;j<=NF;j++){ $j=toupper(substr($j,1,1)) substr($j,2) }}1')
   verify
 }
@@ -52,11 +52,13 @@ import './styles.scss';
 /**
  * Renders a $COMPONENT_NAME.
  */
-const $COMPONENT_NAME = ({ variation }) => (
-  <div className={classnames('$DIRECTORY_NAME', \`$DIRECTORY_NAME--\${variation}\`)} />
+const $COMPONENT_NAME = ({ className, variation }) => (
+  <div className={classnames('$DIRECTORY_NAME', \`$DIRECTORY_NAME--\${variation}\`, className)} />
 );
 
 $COMPONENT_NAME.propTypes = {
+  /** Top level class name to add to component */
+  className: PropTypes.string,
   /** Type of $DIRECTORY_NAME to render */
   variation: PropTypes.oneOf(['foo']).isRequired
 };
@@ -121,7 +123,7 @@ EOF
 cat << EOF > README.md
 ### Variations
 
-#### Foo:
+#### $COMPONENT_NAME.Foo
 
 \`\`\`jsx
 const $COMPONENT_NAME = require('./index').default;

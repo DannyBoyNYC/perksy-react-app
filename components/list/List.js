@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import './styles.scss';
 
 /**
- * Renders a list of items in an ordered or unordered list.
+ * Renders a list of items ordered or unordered.
  */
 const List = ({ className, items, onPrerender, variation }) => {
   const ListTag = variation === 'ordered' ? 'ol' : 'ul';

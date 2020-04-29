@@ -14,6 +14,7 @@ html {
 
   .side-bar {
     background-color: #19222f;
+    position: relative;
     text-align: center;
     width: 233px;
   }
@@ -25,8 +26,23 @@ html {
     width: 100px;
   }
 
+  .user--avatar {
+    color: white;
+    margin: 50px auto;
+    text-align: center;
+
+    .user__image {
+      margin: 0 auto;
+    }
+  }
+
   .navigation {
     text-align: left;
+
+    &--utility {
+      bottom: 0;
+      position: absolute;
+    }
 
     &-item__link {
       color: white;
@@ -60,6 +76,20 @@ html {
     .title {
       display: inline-block;
     }
+
+    .button--campaign {
+      float: right;
+    }
+  }
+
+  .dropdown {
+    display: inline-block;
+    float: right;
+    width: 100px;
+
+    &__control {
+      border-radius: 0;
+    }
   }
 
   .body {
@@ -72,17 +102,31 @@ html {
     height: 300px;
     margin-top: 17px;
     vertical-align: top;
-    width: 60%;
+    width: 65%;
+  }
+
+  .progress-bar {
+    margin: 10px 0;
+    position: relative;
+
+    &__percentage {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
   }
 
   .campaign-responses {
     display: inline-block;
     padding-left: 20px;
-    width: 40%;
+    width: 35%;
+  }
+
+  .campaign-lists {
+    background: lightgrey;
   }
 
   .campaign-list {
-    background: white;
     display: inline-block;
     vertical-align: top;
     width: 50%;

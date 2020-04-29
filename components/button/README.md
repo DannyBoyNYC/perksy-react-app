@@ -1,13 +1,3 @@
-### States
-
-#### Disabled
-
-```jsx
-const Button = require('./index').default;
-
-<Button.Primary isDisabled={true}>Can't touch this</Button.Primary>;
-```
-
 ### Variations
 
 ```jsx
@@ -20,4 +10,14 @@ const Button = require('./index').default;
   <Button.Warning>Warning</Button.Warning>
   <Button.Danger>Danger</Button.Danger>
 </React.Fragment>;
+```
+
+### States
+
+#### Disabled
+
+```jsx
+const Button = require('./index').default;
+
+<Button.Primary isDisabled={true}>Can't touch this</Button.Primary>;
 ```

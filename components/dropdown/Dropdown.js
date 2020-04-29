@@ -4,9 +4,10 @@ import classnames from 'classnames';
 import Select from 'react-select';
 
 /**
- * Renders a single or mutiple select box
+ * Renders a searchable single or multi select box.
  */
 const Dropdown = ({
+  className,
   defaultValue,
   isDisabled,
   isMulti,
@@ -17,7 +18,9 @@ const Dropdown = ({
 }) => {
   const value = options.filter(object => object.value === defaultValue);
   return (
-    <div className={classnames('dropdown', `dropdown--${variation}`)}>
+    <div
+      className={classnames('dropdown', `dropdown--${variation}`, className)}
+    >
       <Select
         className="dropdown__select"
         classNamePrefix="dropdown"
@@ -33,6 +36,8 @@ const Dropdown = ({
 };
 
 Dropdown.propTypes = {
+  /** Top level class name to add to component */
+  className: PropTypes.string,
   /** Value of an option to default to */
   defaultValue: PropTypes.string,
   /** When true the select element is disabled */
@@ -55,8 +60,7 @@ Dropdown.propTypes = {
   /** Content for show as placeholder text */
   placeholderText: PropTypes.string,
   /** Type of select element to render */
-  variation: PropTypes.oneOf(['single-select', 'multi-select', 'search-select'])
-    .isRequired
+  variation: PropTypes.oneOf(['single-select', 'multi-select']).isRequired
 };
 
 Dropdown.defaultProps = {

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<User.* /> <User.Avatar /> should render correctly with all required props 1`] = `
+<div
+  className="user user--avatar"
+>
+  <div
+    className="user__image"
+  />
+  <div
+    className="user__name"
+  >
+    <span
+      className="user__first-name"
+    >
+      Jane
+    </span>
+    <span
+      className="user__last-name"
+    >
+      Doe
+    </span>
+  </div>
+  <div
+    className="user__brand"
+  >
+    Perksy
+  </div>
+</div>
+`;

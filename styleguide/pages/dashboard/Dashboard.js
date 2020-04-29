@@ -1,94 +1,36 @@
 import React from 'react';
 
 import Button from '~/components/button';
+import Dropdown from '~/components/dropdown';
 import List from '~/components/list';
 import Navigation from '~/components/navigation';
 import ProgressBar from '~/components/progress-bar';
+import User from '~/components/user';
 import './styles.scss';
 
-const fixture = {
-  campaigns: [
-    'Alcohol Consumption Report',
-    'Morning Shows Stack',
-    'Grocery Stack'
-  ],
-  upcoming: [],
-  responses: [
-    {
-      title: 'Job Hunt Stack',
-      count: 12294,
-      total: 20000,
-      shouldShowPercentage: true
-    },
-    {
-      title: 'Perksy Rewards Questions',
-      count: 11821,
-      total: 20000,
-      shouldShowPercentage: true
-    },
-    {
-      title: 'College Athletes',
-      count: 2923,
-      total: 20000,
-      shouldShowPercentage: true
-    },
-    {
-      title: 'NEA Test',
-      count: 136,
-      total: 1000,
-      shouldShowPercentage: true
-    },
-    {
-      title: 'High School Athletes',
-      count: 2653,
-      total: 20000,
-      shouldShowPercentage: true
-    }
-  ],
-  logoUrl:
-    'https://staging.getperksy.com/assets/perksy_white_logo-b9bfe71f9f985850ff87a32089ad4a2f80480657b0b5e9e4045dfb91779b9a19.png',
-  links: [
-    {
-      text: 'Dashboard',
-      url: '#'
-    },
-    {
-      text: 'Campaigns',
-      url: '#'
-    },
-    {
-      text: 'Analytics',
-      url: '#'
-    }
-  ],
-  ultilityLinks: [
-    {
-      icon: <i className="icon fas fa-cog" />,
-      text: 'Settings',
-      url: '#'
-    },
-    {
-      icon: <i className="icon fas fa-sign-out-alt" />,
-      text: 'Logout',
-      url: '#'
-    }
-  ]
-};
+import fixture from './data';
 
 /**
- * The Dashboard page for the web app.
+ * The main landing page for users.
  */
 const Dashboard = () => (
   <div className="page page--dashboard">
     <aside className="side-bar">
       <img className="logo" src={fixture.logoUrl} alt="Perksy white logo" />
+      <User.Avatar {...fixture.user} />
       <Navigation.Vertical links={fixture.links} />
-      <Navigation.Vertical links={fixture.ultilityLinks} />
+      <Navigation.Vertical
+        className="navigation--utility"
+        links={fixture.ultilityLinks}
+      />
     </aside>
     <main className="main-content">
       <div className="title-bar">
         <h1 className="title">Today</h1>
-        <Button.Primary>+ New Campaign</Button.Primary>
+        <Dropdown.SingleSelect defaultValue="perksy" options={fixture.brands} />
+        <Button.Primary className="button--campaign">
+          + New Campaign
+        </Button.Primary>
       </div>
       <div className="body">
         <div className="campaign-graph" />

@@ -18,6 +18,10 @@ describe('<Dropdown.* />', () => {
     ]
   };
 
+  beforeEach(() => {
+    jest.mock('react-select', () => 'Select');
+  });
+
   describe('<Dropdown.SingleSelect />', () => {
     beforeEach(() => {
       component = shallow(<Dropdown.SingleSelect {...requiredProps} />).dive();

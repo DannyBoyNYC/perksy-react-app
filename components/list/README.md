@@ -1,6 +1,6 @@
 ### Variations
 
-#### Ordered:
+#### List.Ordered
 
 ```jsx
 const List = require('./index').default;
@@ -8,7 +8,7 @@ const List = require('./index').default;
 <List.Ordered items={['Think', 'Plan', 'Execute']} />;
 ```
 
-#### Unordered:
+#### List.Unordered
 
 ```jsx
 const List = require('./index').default;

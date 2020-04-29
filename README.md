@@ -62,17 +62,34 @@ All decisions surround code style should either be automated with a lint rule or
 
 ## Roadmap
 
-### Next Steps:
+Q4: November and December
+
+- Basic Node app (Next.js)
+- Code Pipeline in place
+- All components (light to medium lift)
+- Heavy lift components
+  - Graphs
+  - Drag and Drop / Piping
+  - Modals
+
+Q1: January
+
+- Complete app integration
+  - Data normalization layer
+- QA
+
+#### Setup
 
 - Add build process for js and css compilation
 - Add theming capabilities / sass architecture for styled components
+- Get style guide hosted on S3
 - Add testing setup (Shippable, Codeship, etc.)
 - Research forms in React
 - Research graph libraries (D3, AM Chart, Any Chart, etc.)
 - Get perksy-web running with components?
 - Test ADA at top-level for components
 
-#### First Sections:
+### First Sections:
 
 1. Dashboard
 2. Campaigns
@@ -88,39 +105,67 @@ All decisions surround code style should either be automated with a lint rule or
    - Respondents
    - Segments
    - Analysis
+4. Settings
 
 #### Components:
 
+**In Progress**
+
+- Campaign (M)
+- Status (L)
+
 **Pipeline**
 
-- Card
-- Slider
+- TabView (M)
+- Image (M)
+  - Basic
+  - Placeholder
+  - Responsive
+  - Lazy
+- Heading? (L)
+- Columns (L)
+- Carousel (M)
+- Timestamp (L)
+- List.Sort (L)
+- Date Picker (M)
+- Modal (H)
+- Toast? (L)
+- Accordion? (M)
+
+**Backlog**
+
+- Drag and Drop / Piping (H)
+- Upload (L)
 - Forms
-- TabView
-- Sidebar
-- Title bar
-- Heading?
-- Feed Collapsible w/ profile view
-- User
-  - .Avatar
-  - .Profile
-- Graphs
+  - CheckBox (L)
+  - Slider (L)
+  - Range (L)
+  - DateTime (L)
+  - Form (L)
+  - FormField (L)
+  - LoginForm (M)
+  - NumberInput (L)
+  - PasswordInput (L)
+  - RadioButton (L)
+  - SearchInput (L)
+  - Select (L)
+  - TextInput (L)
+- Graphs (H)
   - .ProgressBar
   - .PieChart
   - .BarChart (with bar charts, each column represents a group defined by a categorical variable)
   - .Histogram (with histograms, each column represents a group defined by a continuous, quantitative variable)
   - .Country
   - .Table
-- Grid?
 
-**Think on**
+### Dev Lift
 
-- Statuses
-  - Links
-  - Buttons
-- Controls
-- Image
-  - Basic
-  - Placeholder
-  - Responsive
-  - ActionLink
+(L) light: <1 day
+(M) med: 2-4 days
+(H) heavy: 5+
+
+#### Estimation
+
+(L)(M) 48 days ~> 10 weeks
+(H) 15+ days ~> 3 weeks
+**13 weeks total**

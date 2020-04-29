@@ -27,10 +27,12 @@ NavigationItem.propTypes = {
 };
 
 /**
- * Renders a list of links within a nav tag.
+ * Renders a list of links within a navigation element.
  */
-const Navigation = ({ links, variation }) => (
-  <nav className={classnames('navigation', `navigation--${variation}`)}>
+const Navigation = ({ className, links, variation }) => (
+  <nav
+    className={classnames('navigation', `navigation--${variation}`, className)}
+  >
     <List.Unordered
       className="navigation__list"
       items={links}
@@ -40,6 +42,8 @@ const Navigation = ({ links, variation }) => (
 );
 
 Navigation.propTypes = {
+  /** Top level class name to add to component */
+  className: PropTypes.string,
   /** List of link objects { icon, text, url } */
   links: PropTypes.arrayOf(PropTypes.exact(NavigationItem.propTypes))
     .isRequired,

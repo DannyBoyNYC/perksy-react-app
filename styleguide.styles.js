@@ -38,12 +38,12 @@ const theme = {
     small: 13,
     h1: 38,
     h2: 32,
-    h3: 18,
+    h3: 20,
     h4: 18,
-    h5: 16,
+    h5: 18,
     h6: 16
   },
-  maxWidth: 900,
+  maxWidth: 1400,
   sidebarWidth: 240
 };
 
@@ -94,6 +94,9 @@ const styles = {
       marginBottom: '1.5rem',
       textTransform: 'uppercase',
       fontWeight: '700'
+    },
+    heading4: {
+      fontWeight: '700'
     }
   },
   Playground: {
@@ -143,6 +146,14 @@ const styles = {
     }
   },
   StyleGuide: {
+    hasSidebar: {
+      '& main': {
+        maxWidth: '780px',
+        padding: '16px 32px',
+        margin: '0 auto',
+        paddingTop: '3.75rem'
+      }
+    },
     content: {
       paddingTop: '3.75rem',
       '@media (max-width: 600px)': {

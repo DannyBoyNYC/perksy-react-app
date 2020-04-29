@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Campaign.* /> <Campaign.Card /> should render correctly with all required props 1`] = `
+<div
+  className="campaign campaign--card"
+>
+  <div
+    className="campaign__image"
+  />
+  <div
+    className="campaign__name"
+  >
+    Campaign Name
+  </div>
+  <div
+    className="campaign__additional-components"
+  />
+</div>
+`;
+
+exports[`<Campaign.* /> <Campaign.Progress /> should render correctly with all required props 1`] = `
+<div
+  className="campaign campaign--progress"
+>
+  <div
+    className="campaign__image"
+  />
+  <div
+    className="campaign__name"
+  >
+    Campaign Name
+  </div>
+  <div
+    className="campaign__additional-components"
+  />
+  <div
+    className="campaign__progress"
+  >
+    <Basic
+      current={898}
+      maximum={1112}
+    />
+  </div>
+</div>
+`;

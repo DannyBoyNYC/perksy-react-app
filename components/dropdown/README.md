@@ -2,17 +2,10 @@ This is a wrapper component around Jed Watson's [`react-select`](https://github.
 
 ### Variations
 
-#### SingleSelect:
+#### Dropdown.SingleSelect
 
 ```jsx
 const Dropdown = require('./index').default;
-
-const OptionWithImage = () => (
-  <div>
-    <image url="https://perksy-question-images-prod.s3.amazonaws.com/20x20/adfde321-698b-4238-a9fa-ad3c1ebb2f90.png" />
-    Perksy
-  </div>
-);
 
 <Dropdown.SingleSelect
   defaultValue="glossier"
@@ -33,7 +26,7 @@ const OptionWithImage = () => (
 />;
 ```
 
-#### MultiSelect:
+#### Dropdown.MultiSelect
 
 ```jsx
 const Dropdown = require('./index').default;

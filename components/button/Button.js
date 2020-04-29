@@ -7,9 +7,9 @@ import './styles.scss';
 /**
  * Renders a basic button with an on click event.
  */
-const Button = ({ children, isDisabled, onClick, variation }) => (
+const Button = ({ children, className, isDisabled, onClick, variation }) => (
   <button
-    className={classnames('button', `button--${variation}`, {
+    className={classnames('button', `button--${variation}`, className, {
       'button--disabled': isDisabled
     })}
     onClick={onClick}
@@ -21,6 +21,8 @@ const Button = ({ children, isDisabled, onClick, variation }) => (
 );
 
 Button.propTypes = {
+  /** Top level class name to add to component */
+  className: PropTypes.string,
   /** Button content */
   children: PropTypes.node.isRequired,
   /** When true the button is disabled */

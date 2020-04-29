@@ -5,6 +5,7 @@ import ProgressBar from './ProgressBar';
 /**
  * ProgressBar Variations.
  */
+const Basic = props => <ProgressBar {...props} variation="basic" />;
 const Percentage = props => <ProgressBar {...props} variation="percentage" />;
 
-export default { Percentage };
+export default { Basic, Percentage };

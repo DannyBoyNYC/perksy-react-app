@@ -6,9 +6,30 @@ const ProgressBar = require('./index').default;
 describe('<ProgressBar.* />', () => {
   let component;
   const requiredProps = {
-    count: 100,
-    total: 1000
+    current: 100,
+    maximum: 1000
   };
+
+  describe('<ProgressBar.Basic />', () => {
+    beforeEach(() => {
+      component = shallow(<ProgressBar.Basic {...requiredProps} />).dive();
+    });
+
+    it('should render correctly with all required props', () => {
+      expect(component).toMatchSnapshot();
+    });
+
+    it('should have the correct BEM class names', () => {
+      expect(component).toHaveClassName('progress-bar progress-bar--basic');
+    });
+
+    it('should render a title if given one', () => {
+      component = shallow(
+        <ProgressBar.Basic {...requiredProps} title="Title Text" />
+      ).dive();
+      expect(component.find('.progress-bar__title')).toHaveText('Title Text');
+    });
+  });
 
   describe('<ProgressBar.Percentage />', () => {
     beforeEach(() => {
@@ -25,17 +46,7 @@ describe('<ProgressBar.* />', () => {
       );
     });
 
-    it('should render a title if given one', () => {
-      component = shallow(
-        <ProgressBar.Percentage {...requiredProps} title="Title Text" />
-      ).dive();
-      expect(component.find('.progress-bar__title')).toHaveText('Title Text');
-    });
-
-    it('should render the percentage if shouldShowPercentage is true', () => {
-      component = shallow(
-        <ProgressBar.Percentage {...requiredProps} shouldShowPercentage />
-      ).dive();
+    it('should render the percentage value', () => {
       expect(component.find('.progress-bar__percentage')).toHaveText('10%');
     });
   });

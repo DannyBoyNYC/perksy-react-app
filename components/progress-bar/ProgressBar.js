@@ -7,18 +7,19 @@ import './styles.scss';
 /**
  * Renders a progress bar.
  */
-const ProgressBar = ({
-  count,
-  shouldShowPercentage,
-  title,
-  total,
-  variation
-}) => {
-  const percentageLabel = `${count} / ${total}`;
-  const percentage = Math.round((count / total) * 100);
+const ProgressBar = ({ className, current, maximum, title, variation }) => {
+  const percentageLabel = `${current} / ${maximum}`;
+  const percentage = Math.round((current / maximum) * 100);
+  const shouldShowPercentage = variation === 'percentage';
 
   return (
-    <div className={classnames('progress-bar', `progress-bar--${variation}`)}>
+    <div
+      className={classnames(
+        'progress-bar',
+        `progress-bar--${variation}`,
+        className
+      )}
+    >
       {title && <div className="progress-bar__title">{title}</div>}
       {percentageLabel && (
         <div className="progress-bar__label">{percentageLabel}</div>
@@ -37,16 +38,16 @@ const ProgressBar = ({
 };
 
 ProgressBar.propTypes = {
-  /** Number to ... */
-  count: PropTypes.number.isRequired,
-  /** When true percentage value is rendered */
-  shouldShowPercentage: PropTypes.bool,
+  /** Top level class name to add to component */
+  className: PropTypes.string,
+  /** Current value out of maximum amount */
+  current: PropTypes.number.isRequired,
+  /** Total number to divide by */
+  maximum: PropTypes.number.isRequired,
   /** Title to label the data */
   title: PropTypes.string,
-  /** Total number to divide by */
-  total: PropTypes.number.isRequired,
   /** Type of progress bar to render */
-  variation: PropTypes.oneOf(['percentage']).isRequired
+  variation: PropTypes.oneOf(['basic', 'percentage']).isRequired
 };
 
 export default ProgressBar;
