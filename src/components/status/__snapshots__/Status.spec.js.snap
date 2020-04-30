@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Status.* /> <Status.Button /> should render correctly with all required props 1`] = `
+<div
+  className="Status-root-0-1-1 Status-button-0-1-5"
+>
+  <span
+    className="Status-code-0-1-2"
+  >
+    Draft
+  </span>
+</div>
+`;
+
+exports[`<Status.* /> <Status.Title /> should render correctly with all required props 1`] = `
+<div
+  className="Status-root-0-1-1 Status-title-0-1-6"
+>
+  <span
+    className="Status-code-0-1-2"
+  >
+    Active
+  </span>
+</div>
+`;

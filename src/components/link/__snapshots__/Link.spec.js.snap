@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Link.* /> <Link.Next /> should render correctly with all required props 1`] = `
+<Link
+  href="#"
+>
+  <a
+    className="withRouter(Link)-root-0-1-1"
+  >
+    Text
+  </a>
+</Link>
+`;

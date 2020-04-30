@@ -1,11 +1,9 @@
 {
 	"plugins": [
 		["babel-plugin-root-import", {
-      "rootPathSuffix": "."
+      "rootPathSuffix": "./src"
     }],
-		"transform-class-properties",
-		"transform-es2015-destructuring",
-		"transform-object-rest-spread"
+		"@babel/plugin-transform-destructuring",
 	],
-  "presets": ["env", "react"]
+  "presets": ["next/babel"]
 }

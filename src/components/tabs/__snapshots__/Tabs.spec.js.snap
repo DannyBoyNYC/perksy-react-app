@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tabs.* /> <Tabs.Horizontal /> should render correctly with all required props 1`] = `
+<Horizontal>
+  <Jss(Tabs)
+    variation="horizontal"
+  >
+    <Tabs
+      classes={
+        Object {
+          "content": "Tabs-content-0-1-2",
+          "horizontal": "Tabs-horizontal-0-1-5",
+          "root": "Tabs-root-0-1-1",
+          "tabItem": "Tabs-tabItem-0-1-3",
+          "tabList": "Tabs-tabList-0-1-4",
+        }
+      }
+      theme={
+        Object {
+          "background": Object {
+            "block": "#F7F6F5",
+            "item": "#F7F6F5",
+            "main": "#FFFFFF",
+            "page": "#FFFFFF",
+            "sidebar": "#19222F",
+          },
+          "colors": Object {
+            "base": "#BDBDBD",
+            "black": "#000000",
+            "dark": "#5F5E66",
+            "invalid": "red",
+            "light": "#DEDDDC",
+            "lightest": "#F7F6F5",
+            "primary": "#4797F4",
+            "primaryDark": "#2E7EDB",
+            "primaryLight": "#61B1FF",
+            "secondary": "#19222F",
+            "valid": "#58C087",
+            "white": "#FFFFFF",
+          },
+          "fontFamily": "Larsseit, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontFamilyBold": "Larsseit_Bold, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontFamilyMed": "Larsseit_Medium, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+          "fontSize": Object {
+            "base": "15px",
+            "h1": "28px",
+            "h2": "22px",
+            "h3": "20px",
+            "h4": "18px",
+            "h5": "18px",
+            "h6": "16px",
+            "large": "20px",
+            "small": "13px",
+            "text": "16px",
+          },
+        }
+      }
+      variation="horizontal"
+    >
+      <div
+        className="Tabs-root-0-1-1 Tabs-horizontal-0-1-5"
+      >
+        <ul
+          className="Tabs-tabList-0-1-4"
+          role="tablist"
+        >
+          <Jss(Panel)
+            isActive={true}
+            key=".0"
+            onClick={[Function]}
+            tabIndex={0}
+            title="Title for content 1"
+          >
+            <Panel
+              classes={
+                Object {
+                  "content": "Panel-content-0-1-7",
+                  "horizontal": "Panel-horizontal-0-1-10",
+                  "root": "Panel-root-0-1-6",
+                  "tabItem": "Panel-tabItem-0-1-8",
+                  "tabList": "Panel-tabList-0-1-9",
+                }
+              }
+              isActive={true}
+              onClick={[Function]}
+              tabIndex={0}
+              theme={
+                Object {
+                  "background": Object {
+                    "block": "#F7F6F5",
+                    "item": "#F7F6F5",
+                    "main": "#FFFFFF",
+                    "page": "#FFFFFF",
+                    "sidebar": "#19222F",
+                  },
+                  "colors": Object {
+                    "base": "#BDBDBD",
+                    "black": "#000000",
+                    "dark": "#5F5E66",
+                    "invalid": "red",
+                    "light": "#DEDDDC",
+                    "lightest": "#F7F6F5",
+                    "primary": "#4797F4",
+                    "primaryDark": "#2E7EDB",
+                    "primaryLight": "#61B1FF",
+                    "secondary": "#19222F",
+                    "valid": "#58C087",
+                    "white": "#FFFFFF",
+                  },
+                  "fontFamily": "Larsseit, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontFamilyBold": "Larsseit_Bold, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontFamilyMed": "Larsseit_Medium, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": Object {
+                    "base": "15px",
+                    "h1": "28px",
+                    "h2": "22px",
+                    "h3": "20px",
+                    "h4": "18px",
+                    "h5": "18px",
+                    "h6": "16px",
+                    "large": "20px",
+                    "small": "13px",
+                    "text": "16px",
+                  },
+                }
+              }
+              title="Title for content 1"
+            >
+              <li
+                className="Panel-tabItem-0-1-8 active"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="tab"
+              >
+                <span>
+                  Title for content 1
+                </span>
+              </li>
+            </Panel>
+          </Jss(Panel)>
+          <Jss(Panel)
+            isActive={false}
+            key=".1"
+            onClick={[Function]}
+            tabIndex={1}
+            title="Title for content 2"
+          >
+            <Panel
+              classes={
+                Object {
+                  "content": "Panel-content-0-1-7",
+                  "horizontal": "Panel-horizontal-0-1-10",
+                  "root": "Panel-root-0-1-6",
+                  "tabItem": "Panel-tabItem-0-1-8",
+                  "tabList": "Panel-tabList-0-1-9",
+                }
+              }
+              isActive={false}
+              onClick={[Function]}
+              tabIndex={1}
+              theme={
+                Object {
+                  "background": Object {
+                    "block": "#F7F6F5",
+                    "item": "#F7F6F5",
+                    "main": "#FFFFFF",
+                    "page": "#FFFFFF",
+                    "sidebar": "#19222F",
+                  },
+                  "colors": Object {
+                    "base": "#BDBDBD",
+                    "black": "#000000",
+                    "dark": "#5F5E66",
+                    "invalid": "red",
+                    "light": "#DEDDDC",
+                    "lightest": "#F7F6F5",
+                    "primary": "#4797F4",
+                    "primaryDark": "#2E7EDB",
+                    "primaryLight": "#61B1FF",
+                    "secondary": "#19222F",
+                    "valid": "#58C087",
+                    "white": "#FFFFFF",
+                  },
+                  "fontFamily": "Larsseit, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontFamilyBold": "Larsseit_Bold, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontFamilyMed": "Larsseit_Medium, \\"Helvetica Neue\\", Helvetica, Arial, sans-serif",
+                  "fontSize": Object {
+                    "base": "15px",
+                    "h1": "28px",
+                    "h2": "22px",
+                    "h3": "20px",
+                    "h4": "18px",
+                    "h5": "18px",
+                    "h6": "16px",
+                    "large": "20px",
+                    "small": "13px",
+                    "text": "16px",
+                  },
+                }
+              }
+              title="Title for content 2"
+            >
+              <li
+                className="Panel-tabItem-0-1-8"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="tab"
+              >
+                <span>
+                  Title for content 2
+                </span>
+              </li>
+            </Panel>
+          </Jss(Panel)>
+        </ul>
+        <div
+          className="Tabs-content-0-1-2"
+        >
+          <p>
+            Content 1
+          </p>
+        </div>
+      </div>
+    </Tabs>
+  </Jss(Tabs)>
+</Horizontal>
+`;

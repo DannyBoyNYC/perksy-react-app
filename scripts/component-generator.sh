@@ -23,6 +23,7 @@ function verify {
   fi
   echo $'\nYou would like to add a new directory named: ' $DIRECTORY_NAME
   echo 'You would like to add a new component to that directory named: ' $COMPONENT_NAME
+  echo 'You would like to add a component variation named: ' $COMPONENT_NAME.$VARIATION_NAME
   echo $'\nIs this correct? [y|n]\n'
   read confirmation
   confirm
@@ -33,8 +34,12 @@ function prompt {
   echo 'Please enter the component directory name below. It should be lowercase and hyphen-separated for new words.'
   read -p 'Component directory: ' directory
   DIRECTORY_NAME=$directory
-  DIRECTORY_PATH=components/$DIRECTORY_NAME
+  DIRECTORY_PATH=src/components/$DIRECTORY_NAME
   COMPONENT_NAME=$(echo "$DIRECTORY_NAME" | awk 'BEGIN { FS="-"; OFS="" }; {for(j=1;j<=NF;j++){ $j=toupper(substr($j,1,1)) substr($j,2) }}1')
+  echo 'Enter the name of a component variation to start with. It should be lowercase and hyphen-separated for new words.'
+  read -p 'Variation name: ' variation
+  VARIATION_SLUG=$variation
+  VARIATION_NAME=$(echo "$VARIATION_SLUG" | awk 'BEGIN { FS="-"; OFS="" }; {for(j=1;j<=NF;j++){ $j=toupper(substr($j,1,1)) substr($j,2) }}1')
   verify
 }
 
@@ -46,24 +51,27 @@ cat << EOF > "${COMPONENT_NAME}.js"
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import injectSheet from 'react-jss';
 
-import './styles.scss';
+import styles from './styles';
 
 /**
  * Renders a $COMPONENT_NAME.
  */
-const $COMPONENT_NAME = ({ className, variation }) => (
-  <div className={classnames('$DIRECTORY_NAME', \`$DIRECTORY_NAME--\${variation}\`, className)} />
+const $COMPONENT_NAME = ({ classes, className, variation }) => (
+  <div className={classnames(classes.root, classes[variation], className)} />
 );
 
 $COMPONENT_NAME.propTypes = {
-  /** Top level class name to add to component */
+  /** JSS object to pull styles from */
+  classes: PropTypes.object.isRequired,
+  /** Additional class styles to add */
   className: PropTypes.string,
-  /** Type of $DIRECTORY_NAME to render */
-  variation: PropTypes.oneOf(['foo']).isRequired
+  /** Type of $COMPONENT_NAME to render */
+  variation: PropTypes.oneOf(['$VARIATION_SLUG']).isRequired
 };
 
-export default $COMPONENT_NAME;
+export default injectSheet(styles)($COMPONENT_NAME);
 EOF
 
   # add a index.js for component export
@@ -76,16 +84,24 @@ import $COMPONENT_NAME from './$COMPONENT_NAME';
 /**
  * $COMPONENT_NAME Variations.
  */
-const Foo = props => <$COMPONENT_NAME {...props} variation="foo" />;
+const $VARIATION_NAME = props => <$COMPONENT_NAME {...props} variation="$VARIATION_SLUG" />;
 
-export default { Foo };
+export default { $VARIATION_NAME };
+EOF
+
+  # add a styles.js for component JSS styles
+  echo "Creating styles.js..."
+cat << EOF > "styles.js"
+// eslint-disable-next-line no-unused-vars 
+export default theme => ({
+  root: {}
+});
 EOF
 
   # add a .spec file for testing
   echo "Creating ${COMPONENT_NAME}.spec.js..."
 cat << EOF > "${COMPONENT_NAME}.spec.js"
 const React = require('react');
-const { shallow } = require('enzyme');
 
 const $COMPONENT_NAME = require('./index').default;
 
@@ -93,29 +109,16 @@ describe('<$COMPONENT_NAME.* />', () => {
   let component;
   const requiredProps = {};
 
-  describe('<$COMPONENT_NAME.Foo />', () => {
+  describe('<$COMPONENT_NAME.$VARIATION_NAME />', () => {
     beforeEach(() => {
-      // We must use .dive() since the component is wrapped in a variation HOC
-      component = shallow(<$COMPONENT_NAME.Foo {...requiredProps} />).dive();
+      component = shallowUntilTarget(<$COMPONENT_NAME.$VARIATION_NAME {...requiredProps} />, '$COMPONENT_NAME');
     });
 
     it('should render correctly with all required props', () => {
       expect(component).toMatchSnapshot();
     });
-
-    it('should have the correct BEM class names', () => {
-      expect(component).toHaveClassName('$DIRECTORY_NAME $DIRECTORY_NAME--foo');
-    });
   });
 });
-EOF
-
-  # add a styles.scss file using the package name
-  echo "Creating styles.scss..."
-cat << EOF > "styles.scss"
-.$DIRECTORY_NAME {
-
-}
 EOF
 
   # add a README.md file with empty sections
@@ -123,12 +126,12 @@ EOF
 cat << EOF > README.md
 ### Variations
 
-#### $COMPONENT_NAME.Foo
+#### $COMPONENT_NAME.$VARIATION_NAME
 
 \`\`\`jsx
 const $COMPONENT_NAME = require('./index').default;
 
-<$COMPONENT_NAME.Foo />;
+<$COMPONENT_NAME.$VARIATION_NAME />;
 \`\`\`
 EOF
 }

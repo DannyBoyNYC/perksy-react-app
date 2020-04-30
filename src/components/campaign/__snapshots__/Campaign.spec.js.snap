@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Campaign.* /> <Campaign.Card /> should render correctly with all required props 1`] = `
+<div
+  className="Campaign-root-0-1-1 Campaign-card-0-1-6"
+>
+  <Lazy
+    className="Campaign-image-0-1-3"
+  />
+  <div
+    className="Campaign-name-0-1-4"
+  >
+    Campaign Name
+  </div>
+</div>
+`;
+
+exports[`<Campaign.* /> <Campaign.Percentage /> should render correctly with all required props 1`] = `
+<div
+  className="Campaign-root-0-1-1 Campaign-percentage-0-1-7"
+>
+  <div
+    className="Campaign-name-0-1-4"
+  >
+    Campaign Name
+  </div>
+  <div
+    className="Campaign-progress-0-1-8"
+  >
+    <Percentage
+      current={898}
+      maximum={1112}
+    />
+  </div>
+</div>
+`;
+
+exports[`<Campaign.* /> <Campaign.Progress /> should render correctly with all required props 1`] = `
+<div
+  className="Campaign-root-0-1-1 Campaign-progress-0-1-8"
+>
+  <div
+    className="Campaign-name-0-1-4"
+  >
+    Campaign Name
+  </div>
+  <div
+    className="Campaign-progress-0-1-8"
+  >
+    <Basic
+      current={898}
+      maximum={1112}
+    />
+  </div>
+</div>
+`;
+
+exports[`<Campaign.* /> <Campaign.Row /> should render correctly with all required props 1`] = `
+<div
+  className="Campaign-root-0-1-1 Campaign-row-0-1-9"
+>
+  <Lazy
+    className="Campaign-image-0-1-3"
+  />
+  <div
+    className="Campaign-name-0-1-4"
+  >
+    Campaign Name
+  </div>
+  <div
+    className="Campaign-spacer-0-1-5"
+  />
+</div>
+`;

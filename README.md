@@ -1,4 +1,6 @@
-# Perksy Components
+# Perksy React Web App
+
+[![CircleCI](https://circleci.com/gh/perksy/perksy-web-react/tree/master.svg?style=svg&circle-token=091f9150fc3bc6bce7f1db1fb63db4a2f6bfcf74)](https://circleci.com/gh/perksy/perksy-web-react/tree/master)
 
 A collection of common patterns used across Perksy web applications. The aim of this library is to provide a toolbelt of components, that will allow the composition of pages more quickly and consistently.
 
@@ -8,10 +10,10 @@ A collection of common patterns used across Perksy web applications. The aim of 
 
 This repository uses nvm to manage Node versions. Check the `.nvmrc` file for the current Node version.
 
-If you already have nvm installed, just type the following command and follow the prompts to configure Node.
+If you already have nvm installed, just type the following command to install the required Node version.
 
 ```
-$ nvm use
+$ nvm install
 ```
 
 If you do not have nvm installed yet, you can easily due do by using a package manager like [Homebrew](https://brew.sh/).
@@ -30,7 +32,7 @@ $ npm install
 
 ## Usage
 
-We use [React Styleguidist](https://react-styleguidist.js.org/) to generate a living style guide for Perksy components.
+We use [Next.js](https://nextjs.org/) to build our server-side rendered React application.
 
 ### Development
 
@@ -40,12 +42,36 @@ To run the application use the following command and follow all terminal prompts
 $ npm run dev
 ```
 
+The app runs on port `8080` by default. To change this update the value in the `dev` script in `package.json`.
+
+### Style Guide
+
+We use [React Styleguidist](https://react-styleguidist.js.org/) to generate a living style guide for our components.
+
+```
+$ npm run styleguide
+```
+
+The app runs on port `6060` by default. To change this update the `serverPort` variable in `styleguide.config.js`.
+
+To compile the styleguide to a static site, run:
+
+```
+$ npm run styleguide:build
+```
+
 ### Testing
 
 To test all components use the following command.
 
 ```
 $ npm run test
+```
+
+If a snapshot has changed, your past tests will fail. If the change was desired, you can update the snapshot by running:
+
+```
+$ npm run test:update
 ```
 
 To check the current code coverage of components run the following command.
@@ -64,8 +90,9 @@ All decisions surround code style should either be automated with a lint rule or
 
 Q4: November and December
 
-- Basic Node app (Next.js)
+- Basic Next.js Node app
 - Code Pipeline in place
+- Custom Error Pages
 - All components (light to medium lift)
 - Heavy lift components
   - Graphs
@@ -74,19 +101,17 @@ Q4: November and December
 
 Q1: January
 
-- Complete app integration
+- Complete API integration
   - Data normalization layer
 - QA
 
 #### Setup
 
-- Add build process for js and css compilation
-- Add theming capabilities / sass architecture for styled components
-- Get style guide hosted on S3
-- Add testing setup (Shippable, Codeship, etc.)
+- Point S3 bucket to http://components.getperksy.com
+  - http://components.getperksy.com.s3-website-us-east-1.amazonaws.com
+- Add Persky fonts
 - Research forms in React
 - Research graph libraries (D3, AM Chart, Any Chart, etc.)
-- Get perksy-web running with components?
 - Test ADA at top-level for components
 
 ### First Sections:
@@ -112,22 +137,20 @@ Q1: January
 **In Progress**
 
 - Campaign (M)
-- Status (L)
+- Image (M)
+  - Progressive (with Lazy)
+  - Responsive
 
 **Pipeline**
 
-- TabView (M)
-- Image (M)
-  - Basic
-  - Placeholder
-  - Responsive
-  - Lazy
 - Heading? (L)
-- Columns (L)
 - Carousel (M)
 - Timestamp (L)
-- List.Sort (L)
-- Date Picker (M)
+- List.Sort (L) https://github.com/clauderic/react-sortable-hoc
+- DatePicker (M)
+  - Using: https://github.com/airbnb/react-dates
+  - Other: https://github.com/Hacker0x01/react-datepicker
+  - Other: https://github.com/gpbl/react-day-picker
 - Modal (H)
 - Toast? (L)
 - Accordion? (M)
@@ -135,7 +158,6 @@ Q1: January
 **Backlog**
 
 - Drag and Drop / Piping (H)
-- Upload (L)
 - Forms
   - CheckBox (L)
   - Slider (L)
@@ -160,12 +182,12 @@ Q1: January
 
 ### Dev Lift
 
-(L) light: <1 day
-(M) med: 2-4 days
-(H) heavy: 5+
+- (L) light: <1 day
+- (M) med: 2-4 days
+- (H) heavy: 5+
 
 #### Estimation
 
-(L)(M) 48 days ~> 10 weeks
-(H) 15+ days ~> 3 weeks
-**13 weeks total**
+- (L)(M) 48 days ~> 10 weeks
+- (H) 15+ days ~> 3 weeks
+- **13 weeks total**

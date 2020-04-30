@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Panel /> should render correctly with all required props 1`] = `
+<li
+  className="Panel-tabItem-0-1-3"
+  onClick={[Function]}
+  onKeyPress={[Function]}
+  role="tab"
+>
+  <span>
+    Title content
+  </span>
+</li>
+`;

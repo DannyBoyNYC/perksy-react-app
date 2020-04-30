@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dropdown.* /> <Dropdown.MultiSelect /> should render correctly with all required props 1`] = `
+<div
+  className="Dropdown-root-0-1-1"
+>
+  <StateManager
+    defaultInputValue=""
+    defaultMenuIsOpen={false}
+    defaultValue={Array []}
+    instanceId="foo"
+    isMulti={true}
+    isSearchable={true}
+    options={
+      Array [
+        Object {
+          "label": "Foo",
+          "value": "foo",
+        },
+        Object {
+          "label": "Bar",
+          "value": "bar",
+        },
+      ]
+    }
+    styles={
+      Object {
+        "control": [Function],
+        "placeholder": [Function],
+      }
+    }
+    theme={[Function]}
+  />
+</div>
+`;
+
+exports[`<Dropdown.* /> <Dropdown.SingleSelect /> should render correctly with all required props 1`] = `
+<div
+  className="Dropdown-root-0-1-1"
+>
+  <StateManager
+    defaultInputValue=""
+    defaultMenuIsOpen={false}
+    defaultValue={Array []}
+    instanceId="foo"
+    isSearchable={true}
+    options={
+      Array [
+        Object {
+          "label": "Foo",
+          "value": "foo",
+        },
+        Object {
+          "label": "Bar",
+          "value": "bar",
+        },
+      ]
+    }
+    styles={
+      Object {
+        "control": [Function],
+        "placeholder": [Function],
+      }
+    }
+    theme={[Function]}
+  />
+</div>
+`;

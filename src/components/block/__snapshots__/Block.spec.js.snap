@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Block.* /> <Block.CampaignPercentage /> should render correctly with all required props 1`] = `
+<div
+  className="Block-root-0-1-1 Block-campaign-percentage-0-1-5"
+>
+  <Percentage
+    className="Block-item-0-1-4"
+    key="block-0"
+    name="Foo"
+    respondents={
+      Object {
+        "current": 100,
+      }
+    }
+  />
+  <Percentage
+    className="Block-item-0-1-4"
+    key="block-1"
+    name="Bar"
+    respondents={
+      Object {
+        "current": 1000,
+      }
+    }
+  />
+  <Percentage
+    className="Block-item-0-1-4"
+    key="block-2"
+    name="Baz"
+    respondents={
+      Object {
+        "current": 10000,
+      }
+    }
+  />
+</div>
+`;
+
+exports[`<Block.* /> <Block.CampaignRow /> should render correctly with all required props 1`] = `
+<div
+  className="Block-root-0-1-1 Block-campaign-row-0-1-6"
+>
+  <Row
+    className="Block-item-0-1-4"
+    key="block-0"
+    name="Foo"
+    respondents={
+      Object {
+        "current": 100,
+      }
+    }
+  />
+  <Row
+    className="Block-item-0-1-4"
+    key="block-1"
+    name="Bar"
+    respondents={
+      Object {
+        "current": 1000,
+      }
+    }
+  />
+  <Row
+    className="Block-item-0-1-4"
+    key="block-2"
+    name="Baz"
+    respondents={
+      Object {
+        "current": 10000,
+      }
+    }
+  />
+</div>
+`;

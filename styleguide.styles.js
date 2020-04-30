@@ -103,7 +103,8 @@ const styles = {
     preview: {
       background: colors.off_white,
       border: 0,
-      borderRadius: 0
+      borderRadius: 0,
+      fontFamily: 'Larsseit, "Helvetica Neue", Helvetica, Arial, sans-serif'
     }
   },
   ReactComponent: {

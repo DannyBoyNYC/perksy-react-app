@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Sidebar.* /> <Sidebar.Collapsible /> should render correctly with all required props 1`] = `
+<aside
+  className="Sidebar-root-0-1-1"
+>
+  <Info
+    className="Sidebar-toggle-0-1-2"
+    onClick={[Function]}
+  >
+    X
+  </Info>
+  <White
+    className="Sidebar-logo-0-1-3"
+  />
+  <Avatar
+    className="Sidebar-user-0-1-4"
+  />
+  <Vertical
+    className="Sidebar-navigation-0-1-5"
+    links={
+      Array [
+        Object {
+          "text": "Foo",
+          "url": "#",
+        },
+        Object {
+          "text": "Bar",
+          "url": "#",
+        },
+      ]
+    }
+  />
+</aside>
+`;
+
+exports[`<Sidebar.* /> <Sidebar.Static /> should render correctly with all required props 1`] = `
+<aside
+  className="Sidebar-root-0-1-1 Sidebar-static-0-1-7"
+>
+  <White
+    className="Sidebar-logo-0-1-3"
+  />
+  <Avatar
+    className="Sidebar-user-0-1-4"
+  />
+  <Vertical
+    className="Sidebar-navigation-0-1-5"
+    links={
+      Array [
+        Object {
+          "text": "Foo",
+          "url": "#",
+        },
+        Object {
+          "text": "Bar",
+          "url": "#",
+        },
+      ]
+    }
+  />
+</aside>
+`;

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Logo.* /> <Logo.Black /> should render correctly with all required props 1`] = `
+<div
+  className="Logo-root-0-1-1"
+>
+  <img
+    alt="Perksy black logo"
+    className="Logo-image-0-1-2"
+    src="/static/logo_black.svg"
+  />
+</div>
+`;
+
+exports[`<Logo.* /> <Logo.White /> should render correctly with all required props 1`] = `
+<div
+  className="Logo-root-0-1-1"
+>
+  <img
+    alt="Perksy white logo"
+    className="Logo-image-0-1-2"
+    src="/static/logo_white.svg"
+  />
+</div>
+`;

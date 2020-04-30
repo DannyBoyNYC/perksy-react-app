@@ -7,9 +7,9 @@ module.exports = {
       statements: 100
     }
   },
-  moduleNameMapper: {
-    '\\.(css|scss)$': 'identity-obj-proxy'
-  },
+  collectCoverageFrom: ['src/components/**/[A-Z]*.js'],
+  coverageDirectory: '.coverage',
+  setupFiles: ['./jest.setup.js'],
   setupTestFrameworkScriptFile: 'jest-enzyme',
   snapshotSerializers: ['enzyme-to-json/serializer'],
   testEnvironment: 'enzyme',

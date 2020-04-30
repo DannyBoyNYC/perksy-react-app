@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Sticky.* /> <Sticky.Bottom /> should render correctly with all required props 1`] = `
+<div
+  className="Sticky-root-0-1-1 Sticky-bottom-0-1-2"
+>
+  <div
+    className="child"
+  />
+</div>
+`;
+
+exports[`<Sticky.* /> <Sticky.Top /> should render correctly with all required props 1`] = `
+<div
+  className="Sticky-root-0-1-1 Sticky-top-0-1-3"
+>
+  <div
+    className="child"
+  />
+</div>
+`;
